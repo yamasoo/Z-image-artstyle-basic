@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片藝廊</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .filename {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 14px;
+            word-break: break-all;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            max-height: 100px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        .description::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .description::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .description::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>圖片藝廊</h1>
+        <div class="gallery">
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00135_.jpg" alt="2025-12-11_00135_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 厚塗動畫插圖</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00136_.jpg" alt="2025-12-11_00136_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 超寫實照片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00138_.jpg" alt="2025-12-11_00138_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 平塗動畫插圖</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00140_.jpg" alt="2025-12-11_00140_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 低解析度,8bit遊戲圖片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00142_.jpg" alt="2025-12-11_00142_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 超高解析度遊戲渲染光追圖片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00145_.jpg" alt="2025-12-11_00145_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 手繪素描黑白圖片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00146_.jpg" alt="2025-12-11_00146_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 馬克筆塗鴉</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00147_.jpg" alt="2025-12-11_00147_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 麥克筆繪畫渲染</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00148_.jpg" alt="2025-12-11_00148_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 中國水墨畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00150_.jpg" alt="2025-12-11_00150_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 日本膠彩畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00151_.jpg" alt="2025-12-11_00151_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Japanese ink painting</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00152_.jpg" alt="2025-12-11_00152_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 新藝術運動插圖</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00155_.jpg" alt="2025-12-11_00155_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 浮世繪</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00156_.jpg" alt="2025-12-11_00156_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Pin-up girl art style painting</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00157_.jpg" alt="2025-12-11_00157_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 20世紀日本膠彩畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00158_.jpg" alt="2025-12-11_00158_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 1950年代美國廣告插圖</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00159_.jpg" alt="2025-12-11_00159_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00160_.jpg" alt="2025-12-11_00160_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 二戰機鼻塗鴉藝術</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00162_.jpg" alt="2025-12-11_00162_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 寫真照片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00163_.jpg" alt="2025-12-11_00163_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 3D遊戲多邊形圖片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00165_.jpg" alt="2025-12-11_00165_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 二戰機鼻性感女郎塗鴉</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00167_.jpg" alt="2025-12-11_00167_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 水彩畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00168_.jpg" alt="2025-12-11_00168_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 粉彩畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00169_.jpg" alt="2025-12-11_00169_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 水彩粉彩畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00170_.jpg" alt="2025-12-11_00170_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 油畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00171_.jpg" alt="2025-12-11_00171_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 印象派油畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00172_.jpg" alt="2025-12-11_00172_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 18世紀油畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00173_.jpg" alt="2025-12-11_00173_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 文藝復興時期油畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00174_.jpg" alt="2025-12-11_00174_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 雕版印刷畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00175_.jpg" alt="2025-12-11_00175_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 雕版印刷畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00176_.jpg" alt="2025-12-11_00176_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 木刻雕版印刷畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00177_.jpg" alt="2025-12-11_00177_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 網版雕版印刷畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00178_.jpg" alt="2025-12-11_00178_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 古埃及壁畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00179_.jpg" alt="2025-12-11_00179_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 敦煌壁畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00180_.jpg" alt="2025-12-11_00180_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 蘇聯宣傳畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00181_.jpg" alt="2025-12-11_00181_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 二戰美國宣傳海報畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00182_.jpg" alt="2025-12-11_00182_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 二戰美國宣傳海報照片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00183_.jpg" alt="2025-12-11_00183_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 宣傳海報畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00184_.jpg" alt="2025-12-11_00184_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 旅遊雜誌插圖</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00185_.jpg" alt="2025-12-11_00185_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 旅遊雜誌封面畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00186_.jpg" alt="2025-12-11_00186_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 國家地理頻道封面畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00187_.jpg" alt="2025-12-11_00187_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 國家地理頻道封面照片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00188_.jpg" alt="2025-12-11_00188_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> time magazine封面照片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00189_.jpg" alt="2025-12-11_00189_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> time magazine封面畫</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00190_.jpg" alt="2025-12-11_00190_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 時尚雜誌VOGUE封面照片</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00191_.jpg" alt="2025-12-11_00191_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 電影拍攝現場劇照</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00192_.jpg" alt="2025-12-11_00192_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Thick-painted animation illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00193_.jpg" alt="2025-12-11_00193_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Hyper-realistic photos</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00194_.jpg" alt="2025-12-11_00194_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Flat-painted animation illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00195_.jpg" alt="2025-12-11_00195_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Low-resolution, 8-bit game images</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00196_.jpg" alt="2025-12-11_00196_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Ultra-high resolution game rendering with ray tracing</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00197_.jpg" alt="2025-12-11_00197_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Hand-drawn sketches in black and white</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00198_.jpg" alt="2025-12-11_00198_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Marker doodles</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00199_.jpg" alt="2025-12-11_00199_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Marker drawing renderings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00200_.jpg" alt="2025-12-11_00200_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Chinese ink painting</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00201_.jpg" alt="2025-12-11_00201_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Japanese ink painting</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00202_.jpg" alt="2025-12-11_00202_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Japanese gouache painting</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00203_.jpg" alt="2025-12-11_00203_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 1950s American advertising illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00204_.jpg" alt="2025-12-11_00204_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Art Nouveau illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00205_.jpg" alt="2025-12-11_00205_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Pin-up girl art style  illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00206_.jpg" alt="2025-12-11_00206_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> WWII aircraft nose graffiti art</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00208_.jpg" alt="2025-12-11_00208_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Photographs</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00209_.jpg" alt="2025-12-11_00209_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 3D game polygonal images</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00211_.jpg" alt="2025-12-11_00211_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Watercolor paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00212_.jpg" alt="2025-12-11_00212_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Pastel paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00213_.jpg" alt="2025-12-11_00213_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Watercolor pastel paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00214_.jpg" alt="2025-12-11_00214_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Oil paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00215_.jpg" alt="2025-12-11_00215_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Impressionist oil paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00216_.jpg" alt="2025-12-11_00216_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> 18th-century oil paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00217_.jpg" alt="2025-12-11_00217_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Renaissance oil paintings</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00218_.jpg" alt="2025-12-11_00218_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Engraving prints</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00219_.jpg" alt="2025-12-11_00219_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Woodblock engraving prints</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00220_.jpg" alt="2025-12-11_00220_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Screen engraving prints</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00221_.jpg" alt="2025-12-11_00221_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Ancient Egyptian murals</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00223_.jpg" alt="2025-12-11_00223_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Dunhuang murals</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00224_.jpg" alt="2025-12-11_00224_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Soviet propaganda posters</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00225_.jpg" alt="2025-12-11_00225_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> WWII American propaganda posters</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00226_.jpg" alt="2025-12-11_00226_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> WWII American propaganda poster photos</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00227_.jpg" alt="2025-12-11_00227_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Propaganda posters</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00228_.jpg" alt="2025-12-11_00228_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Travel magazine illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00229_.jpg" alt="2025-12-11_00229_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Travel magazine cover illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00230_.jpg" alt="2025-12-11_00230_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> National Geographic Channel cover illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00231_.jpg" alt="2025-12-11_00231_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> National Geographic Channel cover photos</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00232_.jpg" alt="2025-12-11_00232_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Time magazine cover photos</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00233_.jpg" alt="2025-12-11_00233_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> Magazine cover illustrations</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00234_.jpg" alt="2025-12-11_00234_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> VOGUE magazine cover photos</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00235_.jpg" alt="2025-12-11_00235_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> movie set stills photos</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="2025-12-11_00241_.jpg" alt="2025-12-11_00241_">
+                </div>
+                <div class="content">
+                    
+                    <div class="description"><b> prompt :</b> WWII sexy nude woman aircraft nose graffiti</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
